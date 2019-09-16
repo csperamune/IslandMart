@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginDao {
-    public static boolean validate(String email, String pass) {        
+    public static boolean validate(String name, String pass) {        
         boolean status = false;
         Connection conn = null;
         PreparedStatement pst = null;
@@ -24,8 +24,8 @@ public class LoginDao {
                     .getConnection(url + dbName, userName, password);
 
             pst = conn
-                    .prepareStatement("select * from userdata where email=? and pass=?");
-			pst.setString(1, email);
+                    .prepareStatement("select * from userdata where fname=? and pass=?");
+			pst.setString(1, name);
             pst.setString(2, pass);
 
             rs = pst.executeQuery();

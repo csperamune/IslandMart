@@ -58,7 +58,14 @@
 				</div>
 				<div class="log_reg d-flex flex-row align-items-center justify-content-start">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li><p>Hi,<a href="#"><%=session.getAttribute("email")%></a></p></li>
+						<li>
+							<div class="dropdown">
+  								<button class="dropbtn">Hi,<%=session.getAttribute("name")%></button>
+  								<div class="dropdown-content">
+    								<a href="index.jsp">Log out</a>
+  								</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
