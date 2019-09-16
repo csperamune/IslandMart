@@ -58,8 +58,7 @@
 				</div>
 				<div class="log_reg d-flex flex-row align-items-center justify-content-start">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li><a href="login.jsp">Login</a></li>
-						<li><a href="signup.jsp">Register</a></li>
+						<li><p>Hi,<a href="#"><%=session.getAttribute("email")%></a></p></li>
 					</ul>
 				</div>
 			</div>
@@ -89,8 +88,7 @@
 		<div class="menu_log_reg">
 			<div class="log_reg d-flex flex-row align-items-center justify-content-end">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Register</a></li>
+					<li><p>Hi,<a href="#"><%=session.getAttribute("name")%></a></p></li>
 				</ul>
 			</div>
 			<nav class="menu_nav">
@@ -453,6 +451,7 @@
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
 <script src="js/custom.js"></script>
 </body>
 </html>
