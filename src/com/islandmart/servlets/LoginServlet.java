@@ -1,4 +1,4 @@
-package com.amzi.servlets;
+package com.islandmart.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.amzi.dao.LoginDao;
+import com.islandmart.dao.LoginDao;
 
 public class LoginServlet extends HttpServlet{
 
@@ -30,9 +30,9 @@ public class LoginServlet extends HttpServlet{
         session.setAttribute("name", n);
 
         if(LoginDao.validate(n, p)){  
-            RequestDispatcher rd=request.getRequestDispatcher("index_loged.jsp");  
+            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  
             rd.forward(request,response);  
-        }  
+        } 
         else{  
             out.print("<p style=\"color:red\">Sorry username or password incorrect</p>");  
             RequestDispatcher rd=request.getRequestDispatcher("login.jsp");  

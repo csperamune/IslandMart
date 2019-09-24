@@ -1,18 +1,18 @@
-package signin;
+package com.islandmart.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import signin.signin;
+import com.islandmart.signin.signin;
 
 public class signinDao {
 
     public int registerSignin(signin sigin) throws ClassNotFoundException {
         
         String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "tastdb";
+        String dbName = "islandmart";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
         String password = "1234";

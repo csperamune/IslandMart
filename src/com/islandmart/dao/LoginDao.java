@@ -1,4 +1,4 @@
-package com.amzi.dao;
+package com.islandmart.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ public class LoginDao {
         ResultSet rs = null;
 
         String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "tastdb";
+        String dbName = "islandmart";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
         String password = "1234";
