@@ -29,16 +29,6 @@
 							<div class="footer_text">
 								<p>Nulla aliquet bibendum sem, non placerat risus venenatis at. Prae sent vulputate bibendum dictum. Cras at vehicula urna. Suspendisse fringilla lobortis justo, ut tempor leo cursus in.</p>
 							</div>
-							<div class="social">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-							<div class="footer_submit"><a href="#">submit listing</a></div>
 						</div>
 					</div>
 
@@ -63,15 +53,6 @@
 										<div><img src="images/envelope.svg" alt=""></div>
 										<span>contact@islandmart.com</span>
 									</li>
-								</ul>
-							</div>
-							<div class="footer_links usefull_links">
-								<div class="footer_title">Usefull Links</div>
-								<ul>
-									<li><a href="#">Listings</a></li>
-									<li><a href="#">Featured Properties</a></li>
-									<li><a href="#">Contact Agents</a></li>
-									<li><a href="#">About us</a></li>
 								</ul>
 							</div>
 						</div>

@@ -50,7 +50,7 @@
 
 				<!-- Contact - About -->
 				<div class="col-lg-4 contact_col">
-					<div class="logo"><a href="#">my<span>home</span></a></div>
+					<div class="logo"><a href="#"><span>Island</span>mart</a></div>
 					<div class="contact_text">
 						<p>Nulla aliquet bibendum sem, non placerat risus venenatis at. Prae sent vulputate bibendum dictum. Cras at vehicula urna. Suspendisse fringilla lobortis justo, ut tempor leo cursus in.</p>
 					</div>
@@ -64,19 +64,19 @@
 								<div class="d-flex flex-column align-items-center justify-content-center">
 									<div><img src="images/placeholder_2.svg" alt=""></div>
 								</div>
-								<span>Main Str, no 23, New York</span>
+								<span>Main Str, no 23, Malabe</span>
 							</li>
 							<li class="d-flex flex-row align-items-center justify-content-start">
 								<div class="d-flex flex-column align-items-center justify-content-center">
 									<div><img src="images/phone-call-2.svg" alt=""></div>
 								</div>
-								<span>+546 990221 123</span>
+								<span>+94 77 XX XX XXX</span>
 							</li>
 							<li class="d-flex flex-row align-items-center justify-content-start">
 								<div class="d-flex flex-column align-items-center justify-content-center">
 									<div><img src="images/envelope-2.svg" alt=""></div>
 								</div>
-								<span>hosting@contact.com</span>
+								<span>contact@islandmart.com</span>
 							</li>
 						</ul>
 					</div>

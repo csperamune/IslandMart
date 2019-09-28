@@ -68,10 +68,9 @@
 								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 									<div class="search_inputs d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 										<input type="text" class="search_input" placeholder="Property type" required="required">
-										<input type="text" class="search_input" placeholder="No rooms" required="required">
 										<input type="text" class="search_input" placeholder="Location" required="required">
 									</div>
-									<button class="search_button">submit listing</button>
+									<button class="search_button">submit</button>
 								</div>
 							</form>
 						</div>
@@ -106,33 +105,14 @@
 								<div class="tag tag_house"><a href="listings.jsp">house</a></div>
 								<div class="tag tag_sale"><a href="listings.jsp">for sale</a></div>
 							</div>
-							<div class="tag_price listing_price">$ 217 346</div>
+							<div class="tag_price listing_price">217 346 LKR</div>
 						</div>
 						<div class="listing_content">
 							<div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
 								<img src="images/icon_1.png" alt="">
 								<a href="single.jsp">280 Doe Meadow Drive Landover, MD 20785</a>
 							</div>
-							<div class="listing_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start flex-wrap">
-									<li class="property_area d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_2.png" alt="">
-										<span>2500 sq ft</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_3.png" alt="">
-										<span>2</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_4.png" alt="">
-										<span>5</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_5.png" alt="">
-										<span>2</span>
-									</li>
-								</ul>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -148,33 +128,14 @@
 								<div class="tag tag_house"><a href="listings.jsp">house</a></div>
 								<div class="tag tag_rent"><a href="listings.jsp">for rent</a></div>
 							</div>
-							<div class="tag_price listing_price">$ 515 957</div>
+							<div class="tag_price listing_price">515 957 LKR</div>
 						</div>
 						<div class="listing_content">
 							<div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
 								<img src="images/icon_1.png" alt="">
 								<a href="single.jsp">4812 Haul Road Saint Paul, MN 55102</a>
 							</div>
-							<div class="listing_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start flex-wrap">
-									<li class="property_area d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_2.png" alt="">
-										<span>1234 sq ft</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_3.png" alt="">
-										<span>2</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_4.png" alt="">
-										<span>5</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_5.png" alt="">
-										<span>2</span>
-									</li>
-								</ul>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -190,32 +151,12 @@
 								<div class="tag tag_house"><a href="listings.jsp">house</a></div>
 								<div class="tag tag_sale"><a href="listings.jsp">for sale</a></div>
 							</div>
-							<div class="tag_price listing_price">$ 375 255</div>
+							<div class="tag_price listing_price">375 255 LKR</div>
 						</div>
 						<div class="listing_content">
 							<div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
 								<img src="images/icon_1.png" alt="">
 								<a href="single.jsp">4067 Wolf Pen Road Mountain View, CA 94041</a>
-							</div>
-							<div class="listing_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start flex-wrap">
-									<li class="property_area d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_2.png" alt="">
-										<span>2000 sq ft</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_3.png" alt="">
-										<span>2</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_4.png" alt="">
-										<span>5</span>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<img src="images/icon_5.png" alt="">
-										<span>2</span>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>

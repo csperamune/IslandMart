@@ -697,6 +697,7 @@ section
 .home_content
 {
 	width: 423px;
+	margin-top: 150px;
 	background: #1e1332;
 	padding-left: 47px;
 	padding-top: 41px;
@@ -816,6 +817,9 @@ section
 .search_input
 {
 	width: calc((100% - 22px) / 3);
+	position: relative;
+    margin-left: 141px;
+    left: -137px;
 	height: 51px;
 	padding-left: 27px;
 	background: #ffffff;
