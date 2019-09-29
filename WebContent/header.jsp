@@ -56,10 +56,10 @@
 				<div class="log_reg d-flex flex-row align-items-center justify-content-start">
 					<ul class="d-flex flex-row align-items-start justify-content-start" id = "name"></ul>
 						<script>
-							var name = "<li><div class='dropdown'><button class='dropbtn'>Hi,<%=session.getAttribute("name")%></button><div class='dropdown-content'><a href='#'>Settings</a><a href='login.jsp'>Log out</a></div></div></li>"
-							var admin ="<li><div class='dropdown'><button class='dropbtn'>Hi,<%=session.getAttribute("name")%></button><div class='dropdown-content'><a href='admin.jsp'>Admin</a><a href='login.jsp'>Log out</a></div></div></li>"
+							var name = "<li><div class='dropdown'><button class='dropbtn'>Hi,<%=session.getAttribute("username")%></button><div class='dropdown-content'><a href='userdata.jsp'>Settings</a><a href='login.jsp'>Log out</a></div></div></li>"
+							var admin ="<li><div class='dropdown'><button class='dropbtn'>Hi,<%=session.getAttribute("username")%></button><div class='dropdown-content'><a href='admin.jsp'>Admin</a><a href='login.jsp'>Log out</a></div></div></li>"
 							var login = "<li><a href='login.jsp'>Login</a></li><li><a href='signup.jsp'>Register</a></li>"
-							var log = "<%=session.getAttribute("name")%>"
+							var log = "<%=session.getAttribute("username")%>"
 							
 							if(log == "null"){
 								document.getElementById("name").innerHTML = login;
@@ -75,31 +75,30 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Header Content -->
-		<div class="header_content d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="index.jsp"><img src="images/im_logo.png" class="brandlogo"><span>Island</span>Mart</a></div>
-			<nav class="main_nav">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li class="active"><a href="index.jsp">Home</a></li>
-					<li><a href="about.jsp">About us</a></li>
-					<li><a href="listings.jsp">Listings</a></li>
-					<li><a href="contact.jsp">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-		</div>
-
-	</header>
-
 	<!-- Menu -->
 
 	<div class="menu text-right">
 		<div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
 		<div class="menu_log_reg">
 			<div class="log_reg d-flex flex-row align-items-center justify-content-end">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><p>Hi,<a href="#"><%=session.getAttribute("name")%></a></p></li>
+				<ul class="d-flex flex-row align-items-start justify-content-start" id = "name">
+					<script>
+							var name = "<li><p>Hi,<a href="#"><%=session.getAttribute("username")%></a></p></li>"
+							var admin ="<li><p>Hi,<a href="#"><%=session.getAttribute("username")%></a></p></li>"
+							var login = "<li><a href='login.jsp'>Login</a></li><li><a href='signup.jsp'>Register</a></li>"
+							var log = "<%=session.getAttribute("username")%>"
+							
+							if(log == "null"){
+								document.getElementById("name").innerHTML = login;
+							}
+							else if(log == "admin"){
+								document.getElementById("name").innerHTML = admin;
+							}
+							else{
+								document.getElementById("name").innerHTML = name;
+							}
+						</script>
+					
 				</ul>
 			</div>
 			<nav class="menu_nav">

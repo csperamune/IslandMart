@@ -22,12 +22,12 @@ public class LoginServlet extends HttpServlet{
         response.setContentType("text/html");  
         PrintWriter out = response.getWriter();  
         
-        String n=request.getParameter("name");  
+        String n=request.getParameter("username");  
         String p=request.getParameter("userpass");
         
         HttpSession session = request.getSession(false);
         if(session!=null)
-        session.setAttribute("name", n);
+        session.setAttribute("username", n);
 
         if(LoginDao.validate(n, p)){  
             RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  

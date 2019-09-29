@@ -31,6 +31,10 @@
 						<img src="images/avatar-01.jpg" alt="AVATAR">
 					</span>
 
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter Username">
+						<input class="input100" type="text" name="userName">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter first name">
 						<input class="input100" type="text" name="firstName">
 						<span class="focus-input100" data-placeholder="First name"></span>

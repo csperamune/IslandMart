@@ -25,12 +25,14 @@ public class signinServlet extends HttpServlet {
     	
     	response.setContentType("text/html");
     	
+    	String userName = request.getParameter("userName");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
 
         signin signin = new signin();
+        signin.setUserName(userName);
         signin.setFirstName(firstName);
         signin.setLastName(lastName);
         signin.setEmail(email);

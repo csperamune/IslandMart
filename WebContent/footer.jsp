@@ -83,7 +83,7 @@
 								<ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
 									<li><a href="index.jsp">Home</a></li>
 									<li><a href="about.jsp">About us</a></li>
-									<li><a href="listings.jsp">Listings</a></li>
+									<li><a href="listings.jsp">Properties</a></li>
 									<li><a href="contact.jsp">Contact</a></li>
 								</ul>
 							</nav>

@@ -1,37 +1,28 @@
 package com.islandmart.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import common.DB_Connection;
 import com.islandmart.signin.signin;
 
 public class signinDao {
 
     public int registerSignin(signin sigin) throws ClassNotFoundException {
         
-        String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "islandmart";
-        String driver = "com.mysql.jdbc.Driver";
-        String userName = "root";
-        String password = "1234";
+    	DB_Connection ob = new DB_Connection();
+		Connection connection = ob.get_Connection();
         
         int result = 0;
-        
-        //Class.forName(driver);
 
         try {
-        	Class.forName(driver);
-        	Connection connection = DriverManager
-                    .getConnection(url + dbName, userName, password);
-
-        	PreparedStatement preparedStatement = connection
-                    .prepareStatement("INSERT INTO userdata (fname, lname, email, pass) VALUES (?, ?, ?, ?);");
-            preparedStatement.setString(1, sigin.getFirstName());
-            preparedStatement.setString(2, sigin.getLastName());
-            preparedStatement.setString(3, sigin.getEmail());
-            preparedStatement.setString(4, sigin.getPassword());
+        	PreparedStatement preparedStatement = connection.prepareStatement("insert into userdata (usname, fname, lname, email, pass) values (?, ?, ?, ?, ?);");
+            preparedStatement.setString(1, sigin.getUserName());
+            preparedStatement.setString(2, sigin.getFirstName());
+            preparedStatement.setString(3, sigin.getLastName());
+            preparedStatement.setString(4, sigin.getEmail());
+            preparedStatement.setString(5, sigin.getPassword());
 
             System.out.println(preparedStatement);
             result = preparedStatement.executeUpdate();

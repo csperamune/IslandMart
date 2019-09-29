@@ -1,31 +1,24 @@
 package com.islandmart.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import common.DB_Connection;
+
 public class LoginDao {
-    public static boolean validate(String name, String pass) {        
+    public static boolean validate(String username, String pass) {        
         boolean status = false;
-        Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
 
-        String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "islandmart";
-        String driver = "com.mysql.jdbc.Driver";
-        String userName = "root";
-        String password = "1234";
+        DB_Connection ob = new DB_Connection();
+		Connection connection = ob.get_Connection();
+		
         try {
-            Class.forName(driver);
-            conn = DriverManager
-                    .getConnection(url + dbName, userName, password);
-
-            pst = conn
-                    .prepareStatement("select * from userdata where fname=? and pass=?");
-			pst.setString(1, name);
+            pst = connection.prepareStatement("select * from userdata where usname=? and pass=?");
+			pst.setString(1, username);
             pst.setString(2, pass);
 
             rs = pst.executeQuery();
@@ -34,9 +27,9 @@ public class LoginDao {
         } catch (Exception e) {
             System.out.println(e);
         } finally {
-            if (conn != null) {
+            if (connection != null) {
                 try {
-                    conn.close();
+                	connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
