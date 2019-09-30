@@ -29,7 +29,7 @@
 				<li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li><!-- nav-item -->
 				<li class="nav-item"><a href="admin.jsp" class="nav-link">Add Properties</a></li><!-- nav-item -->
 				<li class="nav-item"><a href="table.jsp" class="nav-link">Properties</a></li><!-- nav-item -->
-				<li class="nav-item"><a href="#" class="nav-link">Customers</a></li><!-- nav-item -->
+				<li class="nav-item"><a href="customer.jsp" class="nav-link">Customers</a></li><!-- nav-item -->
 				<li class="nav-item"><a href="login.jsp" class="nav-link">Logout</a></li><!-- nav-item -->
 				</ul><!-- navbar-nav -->
 			</div>

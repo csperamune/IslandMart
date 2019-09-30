@@ -1,7 +1,7 @@
 <%@page import="java.util.Iterator"%>
-<%@page import="common.User_Bean"%>
 <%@page import="java.util.List"%>
-<%@page import="CRUD.ReadValues"%>
+<%@page import="com.islandmart.signin.signin"%>
+<%@page import="com.islandmart.dao.userListDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -24,21 +24,18 @@
 	
 	<%
 	
-	ReadValues obj_read_values = new ReadValues();
+	userListDao user = new userListDao();
 	
-	List<User_Bean> list = obj_read_values.get_values();
+	List<signin> list = user.get_values();
 	
-	Iterator<User_Bean> it_list = list.iterator();
+	Iterator<signin> it_list = list.iterator();
 	
 	%>
 	
 <div class="container mt-5">
 	<div class="row">
 		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<h1 class="text-left">Properties</h1>
-		</div>
-		<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<h3 class="text-right mt-3"><a href="admin.jsp">+Add more Properties</a></h3>
+			<h1 class="text-left">Customers</h1>
 		</div>
 	</div><!-- row -->
 </div>
@@ -46,33 +43,25 @@
 <table class="table table-striped" style="text-align: center;">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">ID</th>	
-      <th scope="col">Property Type</th>
-      <th scope="col">City</th>
-      <th scope="col">State</th>
-      <th scope="col">Address</th>
-      <th scope="col">Description</th>
-      <!-- <th scope="col">Image</th> -->
-      <th scope="col">Update</th>
+      <th scope="col">User Name</th>	
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
        <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
   <%
   while(it_list.hasNext()){
-		User_Bean obj_User_Bean = new User_Bean();
-		obj_User_Bean=it_list.next();
+		signin us01 = new signin();
+		us01=it_list.next();
 	%>	
 		<tr>	
-			<td><%=obj_User_Bean.getProperty_id() %></td>
-      		<td><%=obj_User_Bean.getProperty_type() %></td>
-      		<td><%=obj_User_Bean.getCity() %></td>
-      		<td><%=obj_User_Bean.getState() %></td>
-      		<td><%=obj_User_Bean.getAddress() %></td>
-      		<td><%=obj_User_Bean.getProperty_description() %></td>
-      		<!-- <td><%=obj_User_Bean.getImage_name() %></td> -->
-      		<td><p style="font-size: 18px;"><a href="edit.jsp?property_id=<%=obj_User_Bean.getProperty_id() %>" class="badge badge-primary" style="padding:10px;">Update</a></p></td>
-      		<td><p style="font-size: 18px;"><a href="controller/delete_controller.jsp?property_id=<%=obj_User_Bean.getProperty_id() %>" class="badge badge-danger" style="padding:10px;">Delete</a></p></td>
+			<td><%=us01.getUserName() %></td>
+      		<td><%=us01.getFirstName() %></td>
+      		<td><%=us01.getLastName() %></td>
+      		<td><%=us01.getEmail() %></td>
+      		<td><p style="font-size: 18px;"><a href="controller/deleteUserCon.jsp?name=<%=us01.getUserName() %>" class="badge badge-danger" style="padding:10px;">Delete</a></p></td>
     	</tr>
     	<% 
 	}

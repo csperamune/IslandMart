@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="common.User_Bean"%>
+<%@page import="java.util.List"%>
+<%@page import="CRUD.RecentProp"%>
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -5,6 +9,7 @@
 <head>
 	<title>Admin Pannel</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/im_logo.png">
 	<link rel="stylesheet" type="text/css" href="adcss/bootstrap.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -13,6 +18,16 @@
 <body>
 	<!-- Header -->
 	<jsp:include page="adminheader.jsp"></jsp:include>
+	
+	<%
+	
+	RecentProp obj_read_values = new RecentProp();
+	
+	List<User_Bean> list = obj_read_values.get_values();
+	
+	Iterator<User_Bean> it_list = list.iterator();
+	
+	%>
 		
 	</nav><!-- navbar -->
 
@@ -26,33 +41,18 @@
 
 		<div class="row">
 
-			<div class="col-12  col-sm-6 col-md-3 col-lg-3 col-xl-3 ">
-				<h5 class="text-center">Heading</h5>
+				<%
+  					while(it_list.hasNext()){
+					User_Bean obj_User_Bean = new User_Bean();
+					obj_User_Bean=it_list.next();
+				%>
+			<div class="col-12  col-sm-6 col-md-3 col-lg-3 col-xl-3" id = "prop">
+				<h5 class="text-center"><%=obj_User_Bean.getProperty_type() %></h5>
 				<img src="img/1.jpg" class="mx-auto d-block img-fluid rounded ">
-				<p class="text-center mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p class="text-center mt-1"><%=obj_User_Bean.getAddress() %></p>
 			</div><!-- col-12 -->
-
-			<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3  ">
-				<h5 class="text-center">Heading</h5>
-				<img src="img/1.jpg" class="mx-auto d-block img-fluid  rounded ">
-				<p class="text-center mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div><!-- col-12 -->
-
-			<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 ">
-				<h5 class="text-center">Heading</h5>
-				<img src="img/1.jpg" class="mx-auto d-block img-fluid rounded ">
-				<p class="text-center mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div><!-- col-12 -->
-
-			<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 ">
-				<h5 class="text-center">Heading</h5>
-				<img src="img/1.jpg" class="mx-auto d-block img-fluid rounded ">
-				<p class="text-center mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div><!-- col-12 -->
+			
+				<%} %>
 		</div><!-- row -->
 
 		<div class="row">

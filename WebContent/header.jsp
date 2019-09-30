@@ -6,7 +6,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="images/im_logo.png">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
@@ -56,8 +55,8 @@
 				<div class="log_reg d-flex flex-row align-items-center justify-content-start">
 					<ul class="d-flex flex-row align-items-start justify-content-start" id = "name"></ul>
 						<script>
-							var name = "<li><div class='dropdown'><button class='dropbtn'>Hi,<%=session.getAttribute("username")%></button><div class='dropdown-content'><a href='userdata.jsp'>Settings</a><a href='login.jsp'>Log out</a></div></div></li>"
-							var admin ="<li><div class='dropdown'><button class='dropbtn'>Hi,<%=session.getAttribute("username")%></button><div class='dropdown-content'><a href='admin.jsp'>Admin</a><a href='login.jsp'>Log out</a></div></div></li>"
+							var name = "<li><div class='dropdown'><button class='dropbtn'>Hi,<%=session.getAttribute("username")%></button><div class='dropdown-content'><a href='userdata.jsp?uname=<%=session.getAttribute("username")%>'>Settings</a><a href='login.jsp'>Log out</a></div></div></li>"
+							var admin ="<li><div class='dropdown'><button class='dropbtn'><%=session.getAttribute("username")%></button><div class='dropdown-content'><a href='admin.jsp'>Admin</a><a href='login.jsp'>Log out</a></div></div></li>"
 							var login = "<li><a href='login.jsp'>Login</a></li><li><a href='signup.jsp'>Register</a></li>"
 							var log = "<%=session.getAttribute("username")%>"
 							
