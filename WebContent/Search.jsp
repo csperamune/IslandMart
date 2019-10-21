@@ -1,13 +1,13 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="common.User_Bean"%>
 <%@page import="java.util.List"%>
-<%@page import="CRUD.RecentProp"%>
+<%@page import="com.islandmart.dao.Propertydao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Properties</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/listings.css">
+<link rel="stylesheet" type="text/css" href="styles/listings_responsive.css">
 </head>
 <body>
 
@@ -32,53 +32,32 @@
 			<div class="logo"><a href="index.jsp"><img src="images/im_logo.png" class="brandlogo"><span>Island</span>Mart</a></div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li class="active"><a href="index.jsp">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li><a href="about.jsp">About us</a></li>
-					<li><a href="listings.jsp">Properties</a></li>
+					<li class="active"><a href="listings.jsp">Properties</a></li>
 					<li><a href="contact.jsp">Contact</a></li>
 				</ul>
 			</nav>
 			<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 		</div>
-		</header>
 	<%
-	
-	RecentProp obj_read_values = new RecentProp();
-	
-	List<User_Bean> list = obj_read_values.get_values();
-	
-	Iterator<User_Bean> it_list = list.iterator();
-	
+		Propertydao u01 = new Propertydao();
+		List<User_Bean> list = u01.getPropertyData();
+		Iterator<User_Bean> it_list = list.iterator();
 	%>
 
 	<!-- Home -->
 
 	<div class="home">
-		
-		<!-- Home Slider -->
-		<div class="home_slider_container">
-			 <div class="owl-carousel owl-theme home_slider">
-			 	
-			 	<!-- Slide -->
-			 	<div class="slide">
-			 		<div class="background_image" style="background-image:url(images/index1.jpg)"></div>
-			 	</div>
-
-			 	<!-- Slide -->
-			 	<div class="slide">
-			 		<div class="background_image" style="background-image:url(images/index2.jpg)"></div>
-			 	</div>
-
-			 	<!-- Slide -->
-			 	<div class="slide">
-			 		<div class="background_image" style="background-image:url(images/index3.jpg)"></div>
-			 	</div>
-
-			 </div>
-
-			 <!-- Home Slider Navigation -->
-			 <div class="home_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-			 
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/listings.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content text-center">
+						<div class="home_title">Properties</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -91,18 +70,11 @@
 					<div class="search_container">
 						<div class="search_title">Search</div>
 						<div class="search_form_container">
-							<form action="controller/searchCon.jsp" class="search_form" id="search_form">
+							<form action="#" class="search_form" id="search_form">
 								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 									<div class="search_inputs d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<select class="search_input" name = "property_id" required="required">
-											<option selected value="">-- Property type --</option>
-        									<option value="Land" >Land</option>
-        									<option value="Building" >Building</option>
-        									<option value="Flat" >Flat</option>
-        									<option value="Vehicle" >Vehicle</option>
-        									<option value="House" >House</option>
-										</select>
-										<input type="text" class="search_input" placeholder="Location" name = "city" required="required">
+										<input type="text" class="search_input" placeholder="Property type" required="required">
+										<input type="text" class="search_input" placeholder="Location" required="required">
 									</div>
 									<button class="search_button">submit</button>
 								</div>
@@ -114,55 +86,51 @@
 		</div>
 	</div>
 
-	<!-- Featured -->
+	<!-- Listings -->
 
-	<div class="featured">
+	<div class="listings">
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="section_title_container text-center">
-						<div class="section_title"><h1>Recently Added Properties</h1></div>
+
+					<!-- Listings Container -->
+					
+					<div class="listings_container">
+					<%
+  						while(it_list.hasNext()){
+						User_Bean obj_User_Bean = new User_Bean();
+						obj_User_Bean=it_list.next();
+					%>			
+						<!-- Listing -->
+						<div class="listing_box house sale">
+							<div class="listing">
+								<div class="listing_image">
+									<div class="listing_image_container">
+										<img src="images/listing_1.jpg" alt="">
+									</div>
+									<div class="tags d-flex flex-row align-items-start justify-content-start flex-wrap">
+										<div class="tag tag_house"><a href="listings.jsp"><%=obj_User_Bean.getProperty_type() %></a></div>
+										<div class="tag tag_sale"><a href="listings.jsp">for sale</a></div>
+									</div>
+									<div class="tag_price listing_price">$ 217 346</div>
+								</div>
+								<div class="listing_content">
+									<div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
+										<img src="images/icon_1.png" alt="">
+										<a href="single.jsp?pid=<%=obj_User_Bean.getProperty_id() %>"><%=obj_User_Bean.getAddress() %></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% } %>
 					</div>
 				</div>
 			</div>
-			<div class="row featured_row">
-				
-				<!-- Featured Item -->
-				<%
-  					while(it_list.hasNext()){
-					User_Bean obj_User_Bean = new User_Bean();
-					obj_User_Bean=it_list.next();
-				%>
-				<div class="col-lg-4">
-				
-					<div class="listing">
-					
-						<div class="listing_image">
-							<div class="listing_image_container">
-								<img src="images/listing_1.jpg" alt="">
-							</div>
-							<div class="tags d-flex flex-row align-items-start justify-content-start flex-wrap">
-								<div class="tag tag_house"><a href="listings.jsp"><%=obj_User_Bean.getProperty_type() %></a></div>
-								<div class="tag tag_sale"><a href="listings.jsp">for sale</a></div>
-							</div>
-							<div class="tag_price listing_price">217 346 LKR</div>
-						</div>
-						<div class="listing_content">
-							<div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
-								<img src="images/icon_1.png" alt="">
-								<a href="single.jsp?pid=<%=obj_User_Bean.getProperty_id() %>"><%=obj_User_Bean.getAddress() %></a>
-							</div>
-							
-						</div>
-					</div>
-				</div>	
-				<%} %>
-			</div>
 		</div>
 	</div>
+
 	<!-- footer -->
 	<jsp:include page="footer.jsp"></jsp:include>
-	
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -177,6 +145,7 @@
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="js/listings.js"></script>
 </body>
 </html>

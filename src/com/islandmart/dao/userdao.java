@@ -31,8 +31,6 @@ public class userdao {
 				user.setFirstName(rs.getString("fname"));
 				user.setLastName(rs.getString("lname"));
 				user.setEmail(rs.getString("email"));
-				user.setPassword(rs.getString("pass"));
-				
 			}
 			
 		} catch (Exception e) {
@@ -41,5 +39,27 @@ public class userdao {
 	
 		return user;
 	}
+	
+	public void editUser(signin user) {
 
+		DB_Connection ob = new DB_Connection();
+		Connection connection = ob.get_Connection();
+		
+		PreparedStatement ps = null;
+		
+		try {
+			String query = "update userdata set usname=?, fname=?, lname=?, email=? where usname = ?";
+			ps=connection.prepareStatement(query);
+			ps.setString(1, user.getUserName());
+			ps.setString(2, user.getFirstName());
+			ps.setString(3, user.getLastName());
+			ps.setString(4, user.getEmail());
+			ps.setString(5, user.getUserName());
+			
+			ps.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}	
+	}
 }

@@ -3,7 +3,6 @@ package com.islandmart.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import common.DB_Connection;
 
@@ -26,28 +25,6 @@ public class LoginDao {
 
         } catch (Exception e) {
             System.out.println(e);
-        } finally {
-            if (connection != null) {
-                try {
-                	connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (pst != null) {
-                try {
-                    pst.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
         }
         return status;
     }

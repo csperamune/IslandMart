@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="images/im_logo.png">
+<link rel="icon" href="images/fl_logo.png">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
@@ -122,7 +122,7 @@
 								<div class="listing_content">
 									<div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
 										<img src="images/icon_1.png" alt="">
-										<a href="single.jsp"><%=obj_User_Bean.getAddress() %></a>
+										<a href="single.jsp?pid=<%=obj_User_Bean.getProperty_id() %>"><%=obj_User_Bean.getAddress() %></a>
 									</div>
 								</div>
 							</div>
